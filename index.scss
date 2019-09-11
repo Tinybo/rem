@@ -1,0 +1,122 @@
+$primary: #2d8cf0;
+$success: #19be6b;
+$warning: #ff9900;
+$error: #ed4014;
+$ligth-primary: #5cadff;
+$dark-primary: #2b85e4;
+
+$title: #17233d;
+$content: #515a6e;
+$icon: #808695;
+$disabled: #c5c8ce;
+$border: #dcdee2;
+$divider: #e8eaec;
+$background: #f8f8f9;
+
+@function px2rem ($px) {
+    // @return $px;
+    $rem: 37.5px;
+    @return ($px / $rem) + rem;
+}
+
+.header {
+    width: 100%;
+    height: px2rem(40px);
+    background-color: $primary;
+
+    .header-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        .header-item {
+            font-size: px2rem(16px);
+            line-height: px2rem(40px);;
+            color: white;
+            list-style-type: none;
+
+            &:nth-child(2) {
+                font-size: px2rem(18px);
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.banner-content {
+    position: relative;
+
+    .banner {
+        width: 100%;
+        height: px2rem(190px);
+        display: block;
+    }
+
+    .banner-title {
+        font-size: px2rem(16px);
+        color: #fff;
+        position: absolute;
+        left: px2rem(15px);
+        bottom: px2rem(15px);
+        letter-spacing: px2rem(1px);
+    }
+}
+
+.news-content {
+    .news-item {
+        box-sizing: border-box;
+        width: 100%;
+        height: px2rem(90px);
+        padding-left: px2rem(15px);
+        padding-right: px2rem(15px);
+    }
+
+    .item-inner {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        border-bottom: px2rem(1px) solid $border;
+
+        .news-img {
+            float: left;
+            width: px2rem(95px);
+            height: px2rem(70px);
+            display: block;
+            margin-top: px2rem(10px);
+            margin-right: px2rem(15px);
+        }
+
+        .news-title {
+            color: $content;
+            font-size: px2rem(18px);
+            line-height: px2rem(20px);
+            margin-top: px2rem(16px);
+        }
+
+        & span {
+            position: absolute;
+            font-size: px2rem(12px);
+            color: $disabled;
+            bottom: px2rem(8px); 
+        }
+
+        .time {    
+            left: px2rem(108px);
+        }
+
+        .number {
+            right: px2rem(4px);
+
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                width: px2rem(18px);
+                height: px2rem(18px);
+                background-size: contain;
+                background-image: url('./images/back.png');
+                left: px2rem(-23px);
+            }
+        }
+    } 
+}
