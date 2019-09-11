@@ -3,4 +3,5 @@
 
 1. 安装依赖文件
   cnpm i
-2. 双击index.html
+2. 运行程序
+  cnpm run start
