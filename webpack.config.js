@@ -10,6 +10,13 @@ module.exports = {
         filename:'bundle.js' //输入文件
     },
     mode: 'development',
+    devServer: {
+        contentBase: './',
+        compress: true,
+        port: 9000,
+        open: true, //自动打开浏览器
+        hot: true //热更新
+    },
     module:{
         rules:[
             { test:/\.css$/, loader:'style-loader!css-loader' },
@@ -28,12 +35,8 @@ module.exports = {
             }
         ]
     },
-    /* //其他解决方案配置
-    resolve: {
+    //其他解决方案配置
+   /*  resolve: {
         extensions: ['', '.js', '.json', '.css', '.scss']//添加在此的后缀所对应的文件可以省略后缀
-    },
-    //插件
-    plugins:[
-        new webpack.BannerPlugin('This file is created by ly')
-    ] */
+    }, */
 }
